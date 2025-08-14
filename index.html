@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Warpath: Reloaded</title>
+    <link rel="stylesheet" href="/styles/styles.css" />
+  </head>
+  <body>
+    <div id="game-root" class="app-root">
+      <canvas id="gameCanvas"></canvas>
+      <div id="ui" class="ui-layer">
+        <div class="hud top-hud">
+          <div class="hud-grid">
+            <div class="score left">ENEMY: <span id="p2Score">0</span></div>
+            <div class="timer-wrap"><div id="gameTimer" class="timer">02:00</div></div>
+            <div class="score">DRONES: <span id="p2Drones">250</span></div>
+          </div>
+        </div>
+
+        <div class="hud bottom-hud">
+          <div class="hud-grid">
+            <div class="score left">YOU: <span id="p1Score">0</span></div>
+            <div class="drone-count">
+              <div class="drone-count-label">YOUR DRONES</div>
+              <div id="p1Drones" class="drone-count-number">250</div>
+            </div>
+            <div class="resource-strip">
+              <div id="b_micro" class="bomb-ui-item">
+                <div class="bomb-label">M: <span id="b_micro_count">20</span></div>
+                <div class="clip-pips" id="b_micro_pips"></div>
+                <div class="cooldown-bar" id="b_micro_cooldown"></div>
+              </div>
+              <div id="b_standard" class="bomb-ui-item active">
+                <div class="bomb-label">S: <span id="b_standard_count">10</span></div>
+                <div class="clip-pips" id="b_standard_pips"></div>
+                <div class="cooldown-bar" id="b_standard_cooldown"></div>
+              </div>
+              <div id="b_heavy" class="bomb-ui-item">
+                <div class="bomb-label">H: <span id="b_heavy_count">5</span></div>
+                <div class="clip-pips" id="b_heavy_pips"></div>
+                <div class="cooldown-bar" id="b_heavy_cooldown"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="endScreen" class="center-modal hidden">
+        <div class="modal-content">
+          <div id="endTitle" class="modal-title">VICTORY</div>
+          <div id="endSubtitle" class="modal-subtitle">You have overwhelmed the enemy.</div>
+          <button class="btn" id="restartBtn">Play Again</button>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
